@@ -19,7 +19,7 @@ export class ServerService{
     }
 
     getServers(){
-        return this.http.get('https://http-start-8f266.firebaseio.com/data')
+        return this.http.get('https://http-start-8f266.firebaseio.com/data.json')
             .map(
                 (res: Response) => { 
                     const data = res.json();
@@ -35,5 +35,15 @@ export class ServerService{
                     return Observable.throw('Something went wrong!');
                 }
             );
+    }
+
+    getAppName(){
+        return this.http.get('https://http-start-8f266.firebaseio.com/appName.json')
+            .map(
+                (res: Response) => { 
+                    const data = res.json();
+                    return data;
+                }
+            )
     }
 }
