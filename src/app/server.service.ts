@@ -8,7 +8,10 @@ export class ServerService{
 
     saveServers(servers: any[]){
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post('https://http-start-8f266.firebaseio.com/data.json', servers, {
+        // return this.http.post('https://http-start-8f266.firebaseio.com/data.json', servers, {
+        //     headers: headers
+        // });
+        return this.http.put('https://http-start-8f266.firebaseio.com/data.json', servers, {
             headers: headers
         });
     }
