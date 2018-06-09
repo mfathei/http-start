@@ -12,4 +12,8 @@ export class ServerService{
             headers: headers
         });
     }
+
+    getServers(){
+        return this.http.get('https://http-start-8f266.firebaseio.com/data.json');
+    }
 }
